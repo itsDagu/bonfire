@@ -36,7 +36,19 @@ public class RestaurantData {
     }
 
     public void setPriceRange(String priceRange) {
-        this.price_range = priceRange;
+        if(priceRange.equals("1")){
+            this.price_range = "$";
+        }else if(priceRange.equals("2")){
+            this.price_range = "$$";
+
+        }else if(priceRange.equals("3")){
+            this.price_range = "$$$";
+        }else if(priceRange.equals("4")){
+            this.price_range = "$$$$";
+        }else if(priceRange.equals("5")){
+            this.price_range = "$$$$$";
+        }
+
     }
 
     public void setRating(String rating) {

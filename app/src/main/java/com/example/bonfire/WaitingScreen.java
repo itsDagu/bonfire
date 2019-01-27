@@ -97,7 +97,7 @@ public class WaitingScreen extends AppCompatActivity {
         intent.putExtra("phone_number", restaurantData.getPhone_number());
         intent.putExtra("price_range", restaurantData.getPrice_range());
         intent.putExtra("rating", restaurantData.getRating());
-        intent.putExtra("cuisine", restaurantData.getCuisines());
+        intent.putExtra("cuisines", restaurantData.getCuisines());
 
         startActivity(intent);
     }

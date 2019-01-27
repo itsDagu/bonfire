@@ -6,9 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-
-import com.twilio.client.Twilio;
-import com.twilio.client.impl.useragent.Call;
+import android.widget.TextView;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -29,10 +27,21 @@ public class ReturnRestaurant extends AppCompatActivity {
         String photoUrl = getIntent().getStringExtra("photo_url");
         String menuUrl = getIntent().getStringExtra("menu_url");
         String phoneNumber = getIntent().getStringExtra("phone_number");
-        String priceRange = getIntent().getStringExtra("price_range");
-        String rating = getIntent().getStringExtra("rating");
-        String cuisines = getIntent().getStringExtra("cuisines");
+        String priceRange = "Price Range "+getIntent().getStringExtra("price_range");
+        String rating = "Ratings "+getIntent().getStringExtra("rating");
+        String cuisines = "Cuisines "+getIntent().getStringExtra("cuisines");
 
+        TextView nameView = (TextView) findViewById (R.id.nameView);
+        TextView addressView = (TextView) findViewById (R.id.addressView);
+        TextView priceRangeView = (TextView) findViewById (R.id.priceRangeView);
+        TextView ratingView = (TextView) findViewById (R.id.ratingView);
+        TextView cuisinesView = (TextView) findViewById (R.id.cuisinesView);
+
+        nameView.setText(name);
+        addressView.setText(address);
+        priceRangeView.setText(priceRange);
+        ratingView.setText(rating);
+        cuisinesView.setText(cuisines);
 
 
     }
