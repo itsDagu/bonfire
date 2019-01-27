@@ -30,6 +30,7 @@ public class SheetJSONParser {
     public static JSONObject getDataFromWeb() {
         try {
             OkHttpClient client = new OkHttpClient();
+<<<<<<< HEAD
             Request request = new Request.Builder()
                     .url(MAIN_URL)
                     .build();
@@ -37,6 +38,18 @@ public class SheetJSONParser {
             Log.e(TAG, "NICE, IT WORKED");
             return new JSONObject(response.body().string());
         } catch (@NonNull IOException | JSONException e) {
+=======
+
+
+            Request request = new Request.Builder()
+                    .url(MAIN_URL)
+                    .build();
+
+            response = client.newCall(request).execute();
+            return new JSONObject(response.body().string());
+
+        }catch (@NonNull IOException | JSONException e) {
+>>>>>>> 283227884cfa8286248e5357ceeb91f8b523c166
             Log.e(TAG, "FUCK " + e.getLocalizedMessage());
         }
         return null;
@@ -66,6 +79,7 @@ public class SheetJSONParser {
     }
 }
 
+<<<<<<< HEAD
 
 
 
@@ -89,3 +103,5 @@ public class SheetJSONParser {
     implementation("com.squareup.okhttp3:okhttp:3.12.1")
     implementation("com.squareup.okhttp:okhttp-urlconnection:2.2.0")
 */
+=======
+>>>>>>> 283227884cfa8286248e5357ceeb91f8b523c166

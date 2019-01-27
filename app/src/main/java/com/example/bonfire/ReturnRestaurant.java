@@ -1,14 +1,20 @@
 package com.example.bonfire;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.twilio.client.Twilio;
 import com.twilio.client.impl.useragent.Call;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -32,6 +38,31 @@ public class ReturnRestaurant extends AppCompatActivity {
         String priceRange = getIntent().getStringExtra("price_range");
         String rating = getIntent().getStringExtra("rating");
         String cuisines = getIntent().getStringExtra("cuisines");
+
+
+
+        Intent intent = getIntent();
+
+        JSONObject jsonResponse;
+        try {
+            jsonResponse = new JSONObject(intent.getStringExtra(WaitingScreen.EXTRA_MESSAGE));
+            TextView name = (TextView)findViewById(R.id.name);
+            TextView address = (TextView)findViewById(R.id.address);
+            TextView price_range = (TextView)findViewById(R.id.price_range);
+            TextView rating = (TextView)findViewById(R.id.rating);
+            TextView cuisines = (TextView)findViewById(R.id.cuisines);
+
+            name.setText(jsonResponse.getString("name"));
+            address.setText(jsonResponse.getString("address"));
+            price_range.setText(jsonResponse.getString("price_range"));
+            rating.setText(jsonResponse.getString("rating"));
+            cuisines.setText(jsonResponse.getString("cuisines"));
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
 
 
