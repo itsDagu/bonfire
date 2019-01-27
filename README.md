@@ -1,5 +1,5 @@
 ![logo](https://github.com/itsDagu/bonfire/blob/master/graphics/Bonfire-3.png)
-# Bonfire: the Intelligent Food App
+# [Bonfire: the Intelligent Food App](https://devpost.com/software/bonfire-the-intelligent-food-app-s7lngr)
 
 ## Inspiration
 
