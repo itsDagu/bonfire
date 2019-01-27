@@ -239,7 +239,7 @@ class Pyzomato(object):
         results = self.api.get("/search", params)
         return results
 
-bot_number = '+1 248-313-8557'
+bot_number = '248-313-8557'
 
 lat = input('lat')
 lon = input('lon')
@@ -265,3 +265,42 @@ for i in nearby_res:
     
     df2 = pd.DataFrame(data=[[id,name,address,phone_number,cuisines,price_range,rating,photo_url,menu_url]], columns = col)
     df = df.append(df2, ignore_index = True)
+
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import random
+
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+client = gspread.authorize(creds)
+
+sheet = client.open('picked_restaurants').sheet1
+
+rests = sheet.get_all_records()
+
+print(rests)
+
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+client = gspread.authorize(creds)
+
+sheet = client.open('picked_restaurants').sheet1
+
+n = random.randrange(len(df))
+
+sheet.update_cell(2, 1, df['name'][n])
+sheet.update_cell(2, 2, df['address'][n])
+sheet.update_cell(2, 3, df['photo_url'][n])
+sheet.update_cell(2, 4, df['menu_url'][n])
+sheet.update_cell(2, 5, df['phone_number'][n])
+sheet.update_cell(2, 6, df['price_range'][n])
+sheet.update_cell(2, 7, df['rating'][n])
+sheet.update_cell(2, 8, df['cuisines'][n])
+
+rests = sheet.get_all_records()
+
+print(rests)
