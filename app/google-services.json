@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "1098137916512",
+    "firebase_url": "https://bonfiredb-8502e.firebaseio.com",
+    "project_id": "bonfiredb-8502e",
+    "storage_bucket": "bonfiredb-8502e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098137916512:android:27bce164ff0ee8f3",
+        "android_client_info": {
+          "package_name": "com.example.bonfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098137916512-a5c82g2ifomdk8sn37ufotoqlco9ruvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlUmTxjhW8jCSFv4uCTt0PNfojpXAuNIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098137916512:android:7c475a72eae1cf20",
+        "android_client_info": {
+          "package_name": "com.nwhacks.bonfire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098137916512-a5c82g2ifomdk8sn37ufotoqlco9ruvk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlUmTxjhW8jCSFv4uCTt0PNfojpXAuNIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
