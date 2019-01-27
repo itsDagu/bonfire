@@ -16,12 +16,24 @@ import java.net.URISyntaxException;
 
 public class ReturnRestaurant extends AppCompatActivity {
 
+    private RestaurantData restaurantData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_return_restaurant);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        String name = getIntent().getStringExtra("name");
+        String address = getIntent().getStringExtra("address");
+        String photoUrl = getIntent().getStringExtra("photo_url");
+        String menuUrl = getIntent().getStringExtra("menu_url");
+        String phoneNumber = getIntent().getStringExtra("phone_number");
+        String priceRange = getIntent().getStringExtra("price_range");
+        String rating = getIntent().getStringExtra("rating");
+        String cuisines = getIntent().getStringExtra("cuisines");
+
+
 
     }
 

@@ -1,7 +1,6 @@
-/*
+
 package com.example.bonfire;
-import android.os.Handler;
-import android.os.Message;
+
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -17,8 +16,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import okhttp3.Call;
-
 
 public class SheetJSONParser {
 
@@ -33,34 +30,12 @@ public class SheetJSONParser {
     public static JSONObject getDataFromWeb() {
         try {
             OkHttpClient client = new OkHttpClient();
-
-
-
             Request request = new Request.Builder()
                     .url(MAIN_URL)
                     .build();
-
-            client.newCall(request).enqueue(new Handler.Callback() {
-
-                @Override
-                public boolean handleMessage(Message msg) {
-                    return false;
-                }
-
-                public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
-                }
-
-
-                public void onResponse(Call call, final Response response) throws IOException {
-                    if (!response.isSuccessful()) {
-                        throw new IOException("Unexpected code " + response);
-                    }
-
-                    // you code to handle response
-                }
-            )
-
+            response = client.newCall(request).execute();
+            Log.e(TAG, "NICE, IT WORKED");
+            return new JSONObject(response.body().string());
         } catch (@NonNull IOException | JSONException e) {
             Log.e(TAG, "FUCK " + e.getLocalizedMessage());
         }
@@ -91,7 +66,9 @@ public class SheetJSONParser {
     }
 }
 
-*/
+
+
+
 /*
 // Sheets API
     implementation('com.google.apis:google-api-services-sheets:v4-rev553-1.25.0') {
