@@ -34,9 +34,11 @@ public class WaitingScreen extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        /*SheetJSONParser sheetJSONParser = new SheetJSONParser();
-        jsonResponse = sheetJSONParser.getDataFromWeb();*/
+        //jsonResponse = SheetJSONParser.getDataFromWeb();
 
+        /*SheetJSONParser sheetJSONParser = new SheetJSONParser();
+        jsonResponse = sheetJSONParser.getDataFromWeb();
+*/
      /*   String url = "www.example.com";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (com.android.volley.Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -54,6 +56,7 @@ public class WaitingScreen extends AppCompatActivity {
                     }
                 });
         */
+
         try {
             jsonResponse.put("name","Truffles Fine Foods Cafe");
             jsonResponse.put("address","VanDusen Botanical Gardens, 5151 Oak Street, Vancouver V6H2L8");

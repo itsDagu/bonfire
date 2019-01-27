@@ -1,4 +1,4 @@
-/*
+
 package com.example.bonfire;
 import android.os.Handler;
 import android.os.Message;
@@ -35,33 +35,14 @@ public class SheetJSONParser {
             OkHttpClient client = new OkHttpClient();
 
 
-
             Request request = new Request.Builder()
                     .url(MAIN_URL)
                     .build();
 
-            client.newCall(request).enqueue(new Handler.Callback() {
+            response = client.newCall(request).execute();
+            return new JSONObject(response.body().string());
 
-                @Override
-                public boolean handleMessage(Message msg) {
-                    return false;
-                }
-
-                public void onFailure(Call call, IOException e) {
-                    e.printStackTrace();
-                }
-
-
-                public void onResponse(Call call, final Response response) throws IOException {
-                    if (!response.isSuccessful()) {
-                        throw new IOException("Unexpected code " + response);
-                    }
-
-                    // you code to handle response
-                }
-            )
-
-        } catch (@NonNull IOException | JSONException e) {
+        }catch (@NonNull IOException | JSONException e) {
             Log.e(TAG, "FUCK " + e.getLocalizedMessage());
         }
         return null;
@@ -91,24 +72,3 @@ public class SheetJSONParser {
     }
 }
 
-*/
-/*
-// Sheets API
-    implementation('com.google.apis:google-api-services-sheets:v4-rev553-1.25.0') {
-        exclude group: 'org.apache.httpcomponents'
-    }
-
-    implementation('com.google.api-client:google-api-client-android:1.25.0'){
-        exclude group: 'org.apache.httpcomponents'
-    }
-
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
-
-    implementation 'pub.devrel:easypermissions:0.3.0'
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-// okhttp
-    implementation("com.squareup.okhttp3:okhttp:3.12.1")
-    implementation("com.squareup.okhttp:okhttp-urlconnection:2.2.0")
-*/

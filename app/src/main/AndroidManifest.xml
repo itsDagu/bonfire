@@ -7,8 +7,7 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +19,7 @@
         <activity
             android:name=".ReturnRestaurant"
             android:label="@string/title_activity_return_restaurant"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".WaitingScreen" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
