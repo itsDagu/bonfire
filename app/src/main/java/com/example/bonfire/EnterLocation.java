@@ -154,9 +154,10 @@ public class EnterLocation extends FragmentActivity implements OnMapReadyCallbac
                     @Override
                     public void onComplete(@NonNull Task<Location> task) {
                         if (task.isSuccessful()) {
-                            mSelectedLocation = new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude());
                             // Set the map's camera position to the current location of the device.
                             mLastKnownLocation = task.getResult();
+                            mSelectedLocation = new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude());
+
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     mSelectedLocation, DEFAULT_ZOOM));
                         } else {
