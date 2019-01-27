@@ -57,9 +57,7 @@ dependencies {
 // okhttp
     implementation("com.squareup.okhttp3:okhttp:3.12.1")
     implementation("com.squareup.okhttp:okhttp-urlconnection:2.2.0")
-
-
-    implementation 'com.twilio:voice-android:2.0.9'
+    
 }
 
 apply plugin: 'com.google.gms.google-services'
