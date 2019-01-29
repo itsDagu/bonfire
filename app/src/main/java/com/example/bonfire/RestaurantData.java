@@ -112,7 +112,7 @@ public class RestaurantData {
                     int lenArray = array.length();
                     if(lenArray > 0) {
                         for( int i = 0; i < lenArray; i++) {
-                            JSONObject innerObject = array.getJSONObject(i);
+                            JSONObject innerObject = array.getJSONObject(0);
                             this.setName(innerObject.getString("name"));
                             this.setAddress(innerObject.getString("address"));
                             this.setPhoto(innerObject.getString("photo_url"));

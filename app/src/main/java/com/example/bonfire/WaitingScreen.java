@@ -74,7 +74,7 @@ public class WaitingScreen extends AppCompatActivity {
             e.printStackTrace();
         }*/
 
-        ( new Handler()).postDelayed(this::startReturnRestaurant, 1500);
+        ( new Handler()).postDelayed(this::startReturnRestaurant, 5000);
     }
 
     public class GetDataTask extends AsyncTask<Void, Void, Void> {
